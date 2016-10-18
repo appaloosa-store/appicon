@@ -67,7 +67,7 @@ command :'install' do |c|
   private
 
   def validate_graphics_magick!
-    abort('You need to install Graphics Magick! Check http://http://www.graphicsmagick.org for instructions.') unless system("which gm convert > /dev/null 2>&1")
+    abort('You need to install Graphics Magick! Check http://http://www.graphicsmagick.org for instructions.') unless system("which gm > /dev/null 2>&1")
   end
 
   def validate_icon!
