@@ -8,7 +8,7 @@ command :'install' do |c|
 
   c.action do |args, options|
 
-    validate_image_magick!
+    validate_graphics_magick!
 
     determine_icon! unless @icon = args[0]
     determine_asset_catalog! unless @asset_catalog = args[1]
@@ -36,7 +36,8 @@ command :'install' do |c|
 
       # Generate each icon
       puts "Generating #{image_size} @ #{image_scale}."
-      if system("convert #{@icon.shellescape} -resize #{scaled_image_side}x#{scaled_image_side} #{scaled_image_output.shellescape}")
+      cmd = "convert #{@icon.shellescape} -resize #{scaled_image_side}x#{scaled_image_side} #{scaled_image_output.shellescape}"
+      if system("gm #{cmd}")
 
         # Remove old icons that are not used any more
         previous_icon = image['filename']
@@ -65,8 +66,8 @@ command :'install' do |c|
 
   private
 
-  def validate_image_magick!
-    abort('You need to install Image Magick! Check http://www.imagemagick.org for instructions.') unless system("which convert > /dev/null 2>&1")
+  def validate_graphics_magick!
+    abort('You need to install Graphics Magick! Check http://http://www.graphicsmagick.org for instructions.') unless system("which gm convert > /dev/null 2>&1")
   end
 
   def validate_icon!

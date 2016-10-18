@@ -17,15 +17,16 @@ generate all those icons for you and install them in your Asset Catalog. Done.
     $ gem install appicon
 ```
 
-Appicon uses ImageMagick (http://www.imagemagick.org) for image conversion. Install it using brew:
+Appicon uses Graphics Magick (http://www.graphicsmagick.org) for image conversion. Install it using brew:
 
 ```
-    $ brew install imagemagick
+    $ brew install graphicsmagick
 ```
 
-Not sure if you've already got imagemagick? Check:
+Not sure if you've already got gm? Check:
+
 ```
-    $ convert --version
+    $ gm help
 ```
 
 
@@ -37,7 +38,9 @@ Not sure if you've already got imagemagick? Check:
 
 ## Contact
 
-Found a bug or missing something? Let me know, or even better, file a pull request!
+Forked from the Erik Sundin's project to use GraphicsMagick instead of ImageMagick.
+
+For any suggestion to the main project, let him know, or even better, file a pull request!
 
 Erik Sundin
 
